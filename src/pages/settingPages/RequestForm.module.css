@@ -1,0 +1,243 @@
+.mainRequestForm{
+    width: 100%;
+    min-height: 100vh;
+
+    padding: 2em 1em;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background: var(--lf-brown-50);
+    border-radius: var(--lf-radius);
+    font-size: 1rem;
+}
+
+/* =========================
+   TOP USER INFO
+========================= */
+.outerInfoContainer{
+    width: 100%;
+    max-width: 750px;
+
+    padding: 2em;
+
+    display: flex;
+    justify-content: space-between;
+
+    background: white;
+    border-radius: 1em 1em 0 0;
+    position: relative;
+}
+
+.outerInfoContainer svg{
+    font-size: 2rem;
+
+    color: var(--lf-brown-700);
+
+    cursor: pointer;
+
+    transition: .25s ease;
+}
+
+.outerInfoContainer svg:hover{
+    transform: scale(1.5);
+    color: var(--lf-brown-900);
+}
+
+/* =========================
+   USER IMAGE
+========================= */
+.imageContainer{
+    width: 100%;
+    max-width: 180px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+
+.userImage{
+    width: 130px;
+    height: 130px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 5px solid var(--lf-brown-100);
+
+    box-shadow: var(--lf-shadow-soft);
+}
+
+.userName{
+    text-align: center;
+
+    font-size: 1.5rem;
+    font-weight: 700;
+
+    color: var(--lf-text);
+}
+
+/* =========================
+   QUESTION SECTION
+========================= */
+.outerInputContainer{
+    width: 100%;
+    max-width: 750px;
+
+    background: white;
+
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.innerInputContainer{
+    padding: 1.5em 1.7em;
+
+    display: flex;
+    flex-direction: column;
+    gap: .8em;
+
+    transition: .2s ease;
+}
+
+/* small divider only */
+.innerInputContainer:not(:last-child){
+    border-bottom: 1px solid rgba(90,55,34,.08);
+}
+
+.innerInputContainer:hover{
+    background: var(--lf-brown-50);
+}
+
+.question{
+    font-size: 1rem;
+    font-weight: 700;
+
+    color: var(--lf-brown-700);
+}
+
+.answer{
+    color: var(--lf-muted);
+}
+
+/* =========================
+   DESCRIPTION
+========================= */
+.description{
+    width: 100%;
+    max-width: 750px;
+    text-align: center;
+    background: white;
+
+    padding: 1.3em 1.5em;
+
+    border-radius: 0 01em 1em;
+    color: var(--lf-muted);
+
+    line-height: 1.7;
+}
+
+.description a{
+    color: var(--lf-brown-700);
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+    transition: .2s ease;
+}
+
+.description a:hover{
+    color: var(--lf-brown-900);
+
+    text-decoration: underline;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.verifyBtnContainer{
+    width: 100%;
+    max-width: 750px;
+
+    margin-top: 1.5em;
+
+    display: flex;
+    gap: 1em;
+}
+
+.verifyBtnContainer button{
+    flex: 1;
+    padding: .9em 1.4em;
+
+    border: none;
+
+    border-radius: var(--lf-radius-sm);
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: .25s ease;
+}
+
+/* DECLINE */
+.verifyBtnContainer button:first-child{
+    background: rgba(192,57,43,.12);
+
+    color: #c0392b;
+}
+
+.verifyBtnContainer button:first-child:hover{
+    background: rgba(192,57,43,.2);
+
+    transform: translateY(-2px);
+}
+
+/* ACCEPT */
+.verifyBtnContainer button:last-child{
+    background: var(--lf-brown-700);
+
+    color: white;
+}
+
+.verifyBtnContainer button:last-child:hover{
+    background: var(--lf-brown-900);
+
+    transform: translateY(-2px);
+}
+
+.verifyBtnContainer button:active{
+    transform: scale(.97);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 700px){
+
+    .outerInfoContainer{
+        padding: 1.2em;
+    }
+
+    .userImage{
+        width: 105px;
+        height: 105px;
+    }
+
+    .innerInputContainer{
+        padding: 1.2em;
+    }
+
+    .verifyBtnContainer{
+        flex-direction: column;
+    }
+
+    .verifyBtnContainer button{
+        width: 100%;
+    }
+}

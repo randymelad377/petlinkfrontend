@@ -1,0 +1,197 @@
+.mapMain{
+    width:100%;
+    height:90vh;
+    display:flex;
+    flex-direction:column;
+    gap:1.5rem;
+    padding:var(--lf-padding);
+    overflow:auto;
+    background:var(--lf-brown-50);
+}
+
+
+/* ===========================
+   Clinic Table
+=========================== */
+
+.clinicsOC{
+    width:100%;
+    list-style:none;
+    padding:0;
+    margin:0;
+    border:1px solid var(--lf-border);
+    border-radius:var(--lf-radius);
+    background:white;
+    box-shadow:var(--lf-shadow-soft);
+}
+
+
+/* Rows */
+
+.clinicIC{
+    list-style:none;
+}
+
+
+.clinicIC:not(:last-child){
+    border-bottom:1px solid var(--lf-border);
+}
+
+
+/* Header */
+
+.clinicIC:first-child{
+    background:var(--lf-brown-900);
+    color:white;
+}
+
+
+/* Body */
+
+.clinicIC:not(:first-child){
+    transition:.2s ease;
+}
+
+
+.clinicIC:not(:first-child):hover{
+    background:var(--lf-brown-50);
+}
+
+
+
+/* ===========================
+   Columns
+=========================== */
+
+.clinicInnerOl{
+    list-style:none;
+    display:flex;
+    align-items:center;
+    gap:.5rem;
+    padding:.5rem;
+    margin:0;
+    min-height:65px;
+}
+
+
+.clinicInnerOl > li{
+    flex:1;
+    padding:.5rem;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:var(--lf-text);
+}
+
+
+/* Clinic name wider */
+
+.clinicInnerOl > li:first-child{
+    flex:2;
+    justify-content:flex-start;
+}
+
+
+/* Header text */
+
+.clinicIC:first-child .clinicInnerOl > li{
+    color:white;
+    font-weight:700;
+}
+
+
+
+/* ===========================
+   Inputs
+=========================== */
+
+.clinicInnerOl input{
+
+    width:100%;
+    height:40px;
+
+    border:1px solid var(--lf-border);
+    border-radius:var(--lf-radius-sm);
+
+    padding:.5rem .75rem;
+
+    font-size:.95rem;
+    color:var(--lf-text);
+
+    background:white;
+
+    outline:none;
+
+    transition:.2s ease;
+}
+
+
+.clinicInnerOl input:hover{
+    border-color:var(--lf-brown-500);
+}
+
+
+.clinicInnerOl input:focus{
+    border-color:var(--lf-brown-700);
+    box-shadow:0 0 0 3px rgba(120,70,30,.15);
+}
+
+
+
+/* Header should not have inputs */
+
+.clinicIC:first-child input{
+    display:none;
+}
+
+
+
+/* ===========================
+   Buttons
+=========================== */
+
+.clinicInnerOl button{
+
+    width:100%;
+    max-width:120px;
+
+    height:40px;
+
+    border:none;
+    border-radius:var(--lf-radius-sm);
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    color:white;
+
+    background:var(--lf-brown-700);
+
+    transition:.2s ease;
+
+}
+
+
+.clinicInnerOl button:hover{
+    transform:translateY(-2px);
+    background:var(--lf-brown-600);
+}
+
+
+.clinicInnerOl button:active{
+    transform:translateY(0);
+}
+
+
+
+/* Delete */
+
+.clinicInnerOl li:last-child button{
+    background:#b53b3b;
+}
+
+
+.clinicInnerOl li:last-child button:hover{
+    background:#8f2929;
+}

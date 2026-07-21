@@ -1,0 +1,170 @@
+.sectionInfo{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    border-radius: var(--lf-radius);
+    background: white;
+}
+
+/* PROFILE IMAGE */
+
+.img{
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 1em;
+    border: 5px solid var(--lf-brown-500);
+    box-shadow: var(--lf-shadow-soft);
+}
+
+/* FORM */
+
+.infoContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+}
+
+.innerContainer{
+    width: 100%;
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+.innerContainer input{
+    flex: 1;
+    min-width: 220px;
+    padding: 1em;
+    border: 1px solid var(--lf-border);
+    border-radius: var(--lf-radius-sm);
+    color: var(--lf-text);
+    outline: none;
+    font-size: 0.95rem;
+    transition: var(--lf-transition);
+}
+
+.innerContainer input:focus{
+    border: 1px solid var(--lf-brown-500);
+    background: white;
+    box-shadow: 0 0 0 4px rgba(138,90,60,.12);
+}
+
+.innerContainer input:disabled{
+    cursor: not-allowed;
+    opacity: .85;
+}
+
+.innerContainer input[type="file"]{
+    background: white;
+    padding: 0.8em;
+    cursor: pointer;
+}
+
+/* FILE INPUT */
+
+.inputImageContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: .8em;
+    padding: 1.2em;
+    border: 2px dashed var(--lf-brown-300);
+    border-radius: var(--lf-radius);
+    transition: var(--lf-transition);
+}
+
+.inputImageContainer:hover{
+    border-color: var(--lf-brown-500);
+    background: white;
+}
+
+.inputImageContainer label{
+    font-size: .95rem;
+    font-weight: 600;
+    color: var(--lf-text);
+}
+
+.inputImageContainer input[type="file"]{
+    width: 100%;
+    color: var(--lf-muted);
+    cursor: pointer;
+}
+
+.inputImageContainer input[type="file"]::file-selector-button{
+    padding: .9em 1.4em;
+    border: none;
+    border-radius: var(--lf-radius-sm);
+    background: var(--lf-brown-700);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-right: 1em;
+    transition: var(--lf-transition);
+}
+
+.inputImageContainer input[type="file"]::file-selector-button:hover{
+    background: var(--lf-brown-800);
+    transform: translateY(-1px);
+}
+
+/* ACTION BUTTON */
+
+.actionContainer{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.actionContainer button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5em;
+    padding: .95em 1.8em;
+    border: none;
+    border-radius: var(--lf-radius-sm);
+    background: var(--lf-brown-700);
+    color: white;
+    cursor: pointer;
+    font-size: .95rem;
+    font-weight: 600;
+    transition: var(--lf-transition);
+}
+
+.actionContainer button:hover{
+    background: var(--lf-brown-800);
+    transform: translateY(-2px);
+}
+
+/* MOBILE */
+
+@media (max-width: 768px){
+
+    .sectionInfo{
+        padding: 1.2em;
+    }
+
+    .img{
+        width: 110px;
+        height: 110px;
+    }
+
+    .innerContainer{
+        flex-direction: column;
+    }
+
+    .innerContainer input{
+        width: 100%;
+    }
+
+    .actionContainer{
+        justify-content: center;
+    }
+
+    .actionContainer button{
+        width: 100%;
+    }
+}

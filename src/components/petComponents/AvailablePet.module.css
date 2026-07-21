@@ -1,0 +1,124 @@
+    .sectionPetCard{
+        width: 100%;
+        max-width: var(--lf-container);
+        margin: 0 auto;
+        padding: 1;
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+    }
+    /* CARD */
+    .card{
+        width: 45%;
+        max-width: 250px;
+
+        background: white;
+
+        padding: 0.9rem;
+
+        display: flex;
+        flex-direction: column;
+        gap: 0.7rem;
+
+        border: 1px solid var(--lf-border);
+
+        box-shadow: var(--lf-shadow-soft);
+
+        transition: 0.25s ease;
+    }
+
+    .card:hover{
+        transform: translateY(-5px);
+        box-shadow: var(--lf-shadow);
+    }
+
+    /* IMAGE */
+    .image{
+        width: 100%;
+        height: 160px;
+
+        object-fit: cover;
+
+        border-radius: var(--lf-radius-sm);
+    }
+
+    /* TITLE INSIDE CARD */
+    .species{
+        font-size: 1rem;
+        font-weight: 700;
+
+        color: var(--lf-brown-800);
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* BADGE */
+    .badge{
+        font-size: 0.7rem;
+        font-weight: 700;
+
+        padding: 0.3rem 0.6rem;
+
+        border-radius: 999px;
+
+        background: #fee2e2;
+        color: #dc2626;
+
+        text-transform: uppercase;
+    }
+
+    /* TEXT */
+    .text{
+        font-size: 0.9rem;
+        color: var(--lf-muted);
+
+        line-height: 1.5;
+    }
+
+    /* BUTTON */
+    .button{
+        margin-top: auto;
+
+        padding: 0.7rem 1rem;
+
+        border: none;
+        border-radius: 999px;
+
+        background: var(--lf-brown-500);
+
+        color: white;
+
+        font-size: 0.9rem;
+        font-weight: 600;
+
+        cursor: pointer;
+
+        transition: 0.25s ease;
+    }
+
+    .button:hover{
+        background: var(--lf-brown-700);
+        transform: translateY(-2px);
+    }
+
+    /* TABLET */
+    @media (max-width: 768px){
+        .sectionPetCard{
+            gap: 1.5rem;
+        }
+    }
+
+    /* MOBILE */
+    @media (max-width: 500px){
+        .sectionPetCard > h2{
+            font-size: 1.6rem;
+        }
+
+        .card{
+            max-width: 100%;
+        }
+    }

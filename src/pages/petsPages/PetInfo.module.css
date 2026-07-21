@@ -1,0 +1,632 @@
+.mainPetInfo{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 2em 0;
+}
+
+.infoOuterContainer{
+    width: 100%;
+    max-width: 850px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.8em;
+
+    padding: 2em;
+
+    background: white;
+
+    border: 1px solid var(--lf-border);
+    border-radius: var(--lf-radius);
+
+    box-shadow: var(--lf-shadow);
+}
+
+/* IMAGE SECTION */
+.imageContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.petImages{
+    flex: 1;
+    height: 150px;
+    min-width: 200px;
+    object-fit: cover;
+
+    border-radius: var(--lf-radius-sm);
+
+    border: 1px solid var(--lf-border);
+
+    cursor: pointer;
+    transition: .50s ease;
+}
+
+.petImages:hover{
+    transform: scale(1.5);
+}
+
+/* INFO CONTAINERS */
+.petInfoContainer,
+.transctionInfoContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+/* EACH FIELD */
+.infoInnerContainer{
+    display: flex;
+    flex-direction: column;
+    gap: .45em;
+}
+
+
+/* INPUT STYLE LOOK */
+.value{
+    width: 100%;
+
+    padding: .95em 1em;
+
+    background: var(--lf-brown-50);
+
+    border: 1px solid var(--lf-border);
+    border-radius: var(--lf-radius-sm);
+
+    color: var(--lf-text);
+
+}
+
+.questionContainer{
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(0,0,0,.6);
+    backdrop-filter: blur(4px);
+
+    z-index: 999;
+    padding: 1.5em;
+}
+
+/* MODAL BOX */
+.questionInnerContainer{
+    width: 100%;
+    max-width: 520px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.3em;
+
+    padding: 1.8em;
+
+    background: white;
+
+    border: 1px solid var(--lf-border);
+    border-radius: var(--lf-radius);
+
+    box-shadow: var(--lf-shadow);
+
+    animation: popUp .25s ease;
+}
+.iconContainer{
+    display: flex;
+    justify-content: right;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+/* EACH INPUT BLOCK */
+.inputInnerContainer{
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+}
+
+.questionDesc{
+    text-align: center;
+    color: var(--lf-text);
+    font-size: 1.1em;
+}
+/* INPUT */
+.questionInput{
+    width: 100%;
+
+    padding: .95em 1em;
+
+    background: var(--lf-brown-50);
+
+    border: 1px solid var(--lf-border);
+    border-radius: var(--lf-radius-sm);
+
+    outline: none;
+
+    font-size: .95rem;
+    color: var(--lf-text);
+
+    transition: .25s ease;
+}
+
+.questionInput:focus{
+    border-color: var(--lf-brown-500);
+
+    box-shadow:
+        0 0 0 4px rgba(138,90,60,.12),
+        0 6px 16px rgba(59,36,22,.08);
+
+    background: white;
+}
+.submitButton{
+    width: 100%;
+
+    padding: .95em 1.2em;
+
+    background: var(--lf-brown-700);
+    color: white;
+
+    border: none;
+    border-radius: var(--lf-radius-sm);
+
+    font-size: .95rem;
+    font-weight: 600;
+    letter-spacing: .3px;
+
+    cursor: pointer;
+
+    transition: .25s ease;
+
+    box-shadow: var(--lf-shadow-soft);
+}
+
+.submitButton:hover{
+    background: var(--lf-brown-800);
+    transform: translateY(-2px);
+    box-shadow: var(--lf-shadow);
+}
+
+.submitButton:active{
+    transform: scale(.98);
+}
+
+/* ANIMATION */
+@keyframes popUp{
+    from{
+        transform: scale(.85);
+        opacity: 0;
+    }
+    to{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 650px){
+
+    .infoOuterContainer{
+        padding: 1.2em;
+        border-radius: 0;
+    }
+
+    .imageContainer{
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+
+    .image{
+        height: 115px;
+    }
+
+    .actionContainer{
+        justify-content: center;
+    }
+
+    .actionBtn,
+    .questionContainer button{
+        width: 100%;
+    }
+}
+/* USER INFO */
+.userInfo{
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.2em;
+
+    padding: 1em 1.2em;
+
+    background: linear-gradient(
+        135deg,
+        var(--lf-brown-50),
+        #fff
+    );
+
+    border: 1px solid var(--lf-border);
+    border-radius: var(--lf-radius);
+
+    box-shadow: var(--lf-shadow-soft);
+}
+
+/* PROFILE IMAGE */
+.userImage{
+    width: 75px;
+    height: 75px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 3px solid white;
+
+    box-shadow:
+        0 6px 18px rgba(59,36,22,.15);
+}
+
+/* RIGHT SIDE */
+.userInfoInnerContainer{
+    flex: 1;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+}
+
+/* USER NAME */
+.userName{
+    color: var(--lf-text);
+    cursor: pointer;
+    letter-spacing: .3px;
+}
+
+/* MESSAGE ICON */
+.messageIcon{
+    font-size: 2rem;
+
+    cursor: pointer;
+
+    transition: .25s ease;
+
+}
+
+.messageIcon:hover{
+    transform: translateY(-2px) scale(1.2);
+}
+
+.messageIcon:active{
+    transform: scale(1.2);
+}
+
+/* MOBILE */
+@media (max-width: 500px){
+
+    .userInfo{
+        align-items: center;
+        padding: .9em;
+    }
+
+    .userImage{
+        width: 60px;
+        height: 60px;
+    }
+
+    .userName{
+        font-size: 1rem;
+    }
+
+    .messageIcon{
+        font-size: 1.1rem;
+        padding: .6em;
+    }
+}
+    .menuOuterContainer{
+        position: relative;
+        display: flex;
+        justify-content: right;
+    }
+    .menuIcon{
+        font-size: 2.1em;
+        cursor: pointer;
+    }
+    .settingContainer{
+        position: absolute;
+        top: calc(100% + .4rem);
+        right: 1rem;
+
+        width: 220px;
+
+        padding: .4rem;
+
+        list-style: none;
+
+        background: white;
+
+        border: 1px solid var(--lf-border);
+        border-radius: 16px;
+
+        box-shadow: 0 10px 30px rgba(0,0,0,.08);
+
+        display: flex;
+        flex-direction: column;
+        gap: .2rem;
+
+        z-index: 20;
+
+        animation: fadeDropdown .2s ease;
+    }
+
+    /* EACH ITEM */
+    .settingContainer li{
+        padding: .9rem 1rem;
+
+        border-radius: 12px;
+
+        font-size: .95rem;
+        font-weight: 500;
+
+        color: var(--lf-text);
+
+        cursor: pointer;
+
+        transition: .2s ease;
+
+        display: flex;
+        align-items: center;
+        gap: .7rem;
+    }
+
+    /* HOVER */
+    .settingContainer li:hover{
+        background: var(--lf-brown-50);
+
+        color: var(--lf-brown-700);
+
+        transform: translateX(3px);
+    }
+    /* =========================
+   MAIN PAGE WRAPPER
+========================= */
+.mainPet {
+    width: 100%;
+    padding: 1em;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+
+    position: relative;
+}
+
+/* =========================
+   FLOATING ADD BUTTON
+========================= */
+.addBtn {
+    width: 60px;
+    aspect-ratio: 1/1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-left: auto;
+
+    position: sticky;
+    bottom: 2em;
+
+    border: none;
+    border-radius: 50%;
+
+    background: var(--lf-brown-700);
+    color: white;
+
+    cursor: pointer;
+
+    box-shadow: var(--lf-shadow);
+
+    transition: .25s ease;
+
+    z-index: 100;
+}
+
+.addBtn:hover {
+    background: var(--lf-brown-800);
+    transform: translateY(-4px) scale(1.05);
+}
+
+.addBtn:active {
+    transform: scale(.95);
+}
+
+.addIcon {
+    font-size: 1.5rem;
+}
+
+/* =========================
+   MODAL OVERLAY
+========================= */
+.addPetFormContainer {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0,0,0,.6);
+    backdrop-filter: blur(4px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 1.5em;
+
+    z-index: 999;
+}
+
+/* =========================
+   FORM CARD
+========================= */
+.formInnerContainer {
+    width: 100%;
+    max-width: 700px;
+    height: 85vh;
+    overflow: scroll;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    padding: 2em;
+
+    background: white;
+
+    border: 1px solid var(--lf-border);
+    border-radius: var(--lf-radius);
+
+    box-shadow: var(--lf-shadow);
+
+    animation: popUp .25s ease;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.formInnerContainer::-webkit-scrollbar {
+    display: none;
+}
+
+/* =========================
+   CLOSE ICON
+========================= */
+.iconContainer {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+
+    font-size: 1.3rem;
+    color: var(--lf-text);
+
+    cursor: pointer;
+}
+
+.iconContainer svg {
+    transition: .25s ease;
+}
+
+.iconContainer svg:hover {
+    transform: rotate(90deg);
+}
+
+/* =========================
+   TEXT DESCRIPTION
+========================= */
+.desc {
+    font-size: 1.2em;
+}
+
+/* =========================
+   INPUT STYLES
+========================= */
+.formInnerContainer input {
+    width: 100%;
+    padding: 1em;
+
+    background: var(--lf-brown-50);
+
+    border: 1px solid var(--lf-border);
+    border-radius: var(--lf-radius-sm);
+
+    outline: none;
+
+    font-size: .95rem;
+    color: var(--lf-text);
+}
+
+.formInnerContainer input:focus {
+    border-color: var(--lf-brown-500);
+    background: white;
+
+    box-shadow:
+        0 0 0 4px rgba(138,90,60,.12),
+        0 8px 20px rgba(59,36,22,.08);
+}
+
+/* file input */
+.formInnerContainer input[type="file"] {
+    padding: .8em;
+    cursor: pointer;
+    background: white;
+}
+
+/* =========================
+   RADIO BUTTON GROUP
+========================= */
+.checkBoxOuterContainer {
+    display: flex;
+    gap: 1em;
+}
+
+.checkBoxContainer {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.checkBoxContainer input {
+    width: 1em;
+}
+
+/* =========================
+   SUBMIT BUTTON
+========================= */
+.submitBtn {
+    width: 100%;
+    padding: 1em 1.2em;
+
+    background: var(--lf-brown-700);
+    color: white;
+
+    border: none;
+    border-radius: var(--lf-radius-sm);
+
+    font-size: .95rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: .25s ease;
+
+    box-shadow: var(--lf-shadow-soft);
+}
+
+.submitBtn:hover {
+    background: var(--lf-brown-800);
+    transform: translateY(-2px);
+    box-shadow: var(--lf-shadow);
+}
+
+.submitBtn:active {
+    transform: scale(.98);
+}
+
+/* =========================
+   ERROR TEXT
+========================= */
+.error {
+    text-align: center;
+    color: red;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 600px) {
+    .formInnerContainer {
+        padding: 1.3em;
+    }
+}

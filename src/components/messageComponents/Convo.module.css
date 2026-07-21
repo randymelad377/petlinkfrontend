@@ -1,0 +1,188 @@
+/* OUTER */
+.outerContainer{
+    width: 100%;
+    max-width: 350px;
+    height: 85vh;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(.8rem, 2vw, 1.1rem);
+    position: relative;
+}
+.availableConvo{
+    width: 100%;
+    max-height: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    overflow: scroll;
+    background-color: inherit;
+
+    /* Hide scrollbar */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+.availableConvo::-webkit-scrollbar{
+    display: none; /* Chrome, Safari, Opera */
+}
+/* CARD */
+.innerContainer{
+    width: 100%;
+
+
+    border: 1px solid var(--lf-border);
+    border-radius: clamp(12px, 1vw, 16px);
+
+    padding: clamp(.9rem, 1vw, 1.1rem);
+
+    display: flex;
+    align-items: center;
+
+    gap: clamp(.9rem, 1.2vw, 1.1rem);
+
+    box-shadow: var(--lf-shadow-soft);
+
+    transition: all .25s ease;
+    cursor: pointer;
+}
+
+.innerContainer:hover{
+    transform: translateY(-2px);
+
+    box-shadow: var(--lf-shadow);
+}
+
+/* IMAGE */
+.messageImage{
+    width: clamp(54px, 4.5vw, 66px);
+    height: clamp(54px, 4.5vw, 66px);
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    border: 2px solid var(--lf-brown-100);
+
+    flex-shrink: 0;
+}
+
+/* NAME */
+.messageName{
+    flex: 1;
+
+    margin: 0;
+
+    font-size: clamp(.95rem, 1.4vw, 1.08rem);
+    font-weight: 600;
+
+    color: var(--lf-text);
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* DELETE ICON */
+.messageDelete{
+    font-size: clamp(1.25rem, 1.7vw, 1.55rem);
+
+    color: var(--lf-muted);
+
+    cursor: pointer;
+
+    transition: all .25s ease;
+
+    flex-shrink: 0;
+}
+
+.messageDelete:hover{
+    color: #dc2626;
+
+    transform: scale(1.08);
+}
+
+@media (max-width : 999px) {
+    .outerContainer{
+        height: 90vh;
+        max-height: 90vh;
+        padding: 1em;
+        width: 100%;
+        max-width: 999px;
+    }
+}
+.addBtnAi{
+    width: 100%;
+    padding: .5em;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: .6rem;
+
+    border: none;
+    border-radius: var(--lf-radius);
+
+    background: var(--lf-brown-700);
+    color: white;
+
+    font-size: 1rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow: var(--lf-shadow-soft);
+
+    transition: all .25s ease;
+}
+
+.addBtnAi:hover{
+    background: var(--lf-brown-800);
+
+    transform: translateY(-2px);
+
+    box-shadow: var(--lf-shadow);
+}
+.addBtn{
+    width: 60px;
+    aspect-ratio: 1/1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-left: auto;
+
+    position: absolute;
+    bottom: 2em;
+    right: 1em;
+
+    border: none;
+    border-radius: 50%;
+
+    background: var(--lf-brown-700);
+    color: white;
+
+    cursor: pointer;
+
+    box-shadow: var(--lf-shadow);
+
+    transition: .25s ease;
+
+    z-index: 100;
+}
+
+.addBtn:hover{
+    background: var(--lf-brown-800);
+
+    transform: translateY(-4px) scale(1.05);
+}
+
+.addBtn:active{
+    transform: scale(.95);
+}
+
+.addIcon{
+    font-size: 1.5rem;
+}

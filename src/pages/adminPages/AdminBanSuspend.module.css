@@ -1,0 +1,185 @@
+    .restrictionOuterContainer{
+        width:100%;
+        height:90vh;
+
+        display:flex;
+        flex-direction:column;
+        gap:1.2em;
+
+        padding:var(--lf-padding);
+        overflow:hidden;
+
+    }
+
+    /* HEADER */
+
+    .settingHeader{
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+
+        padding-bottom:1em;
+
+        border-bottom:1px solid var(--lf-border);
+        position: relative;
+    }
+
+    .settingHeader div{
+        display:flex;
+        flex-direction:column;
+        gap:.2em;
+    }
+
+    .settingHeader h2{
+        font-size:1.5rem;
+        font-weight:700;
+
+        color:var(--lf-brown-900);
+    }
+
+    .settingHeader p{
+        color:var(--lf-muted);
+    }
+
+    .settingHeader svg{
+        font-size:2rem;
+        color:var(--lf-brown-700);
+
+        cursor:pointer;
+        transition:.2s ease;
+    }
+
+    .settingHeader svg:hover{
+        color:var(--lf-brown-900);
+        transform:scale(1.05);
+    }
+
+    /* USER LIST */
+
+    .userCardContainer{
+        flex:1;
+
+        display:flex;
+        flex-direction:column;
+        gap:1em;
+
+        background-color: inherit;
+        overflow-y:auto;
+        padding-right:.2em;
+    }
+
+    .userCardContainer::-webkit-scrollbar{
+        width:6px;
+    }
+
+    .userCardContainer::-webkit-scrollbar-thumb{
+        background:var(--lf-brown-100);
+        border-radius:999px;
+    }
+
+    /* CARD */
+
+    .cardInnerContainer{
+        display:flex;
+        align-items:center;
+        gap:.9em;
+
+        padding:1em;
+        background-color: white;
+        border:1px solid var(--lf-border);
+        border-radius:var(--lf-radius-sm);
+
+        cursor:pointer;
+        transition:.25s ease;
+    }
+
+    .cardInnerContainer:hover{
+        transform:translateY(-2px);
+        box-shadow:var(--lf-shadow);
+    }
+
+    .cardImg{
+        width:60px;
+        height:60px;
+
+        object-fit:cover;
+
+        border-radius:50%;
+        border:2px solid var(--lf-brown-100);
+
+        flex-shrink:0;
+    }
+
+    .descContainer{
+        flex:1;
+
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+    }
+
+    .cardUserName{
+        font-size:1rem;
+        font-weight:600;
+
+        color:var(--lf-text);
+    }
+
+    .menuOuterContainer{
+        position: relative;
+    }
+    .settingContainer{
+        position: absolute;
+        top: calc(100% + .4rem);
+        right: 1rem;
+
+        width: 220px;
+
+        padding: .4rem;
+
+        list-style: none;
+
+        background: white;
+
+        border: 1px solid var(--lf-border);
+        border-radius: 16px;
+
+        box-shadow: 0 10px 30px rgba(0,0,0,.08);
+
+        display: flex;
+        flex-direction: column;
+        gap: .2rem;
+
+        z-index: 20;
+
+        animation: fadeDropdown .2s ease;
+    }
+
+    /* EACH ITEM */
+    .settingContainer li{
+        padding: .9rem 1rem;
+
+        border-radius: 12px;
+
+        font-size: .95rem;
+        font-weight: 500;
+
+        color: var(--lf-text);
+
+        cursor: pointer;
+
+        transition: .2s ease;
+
+        display: flex;
+        align-items: center;
+        gap: .7rem;
+    }
+
+    /* HOVER */
+    .settingContainer li:hover{
+        background: var(--lf-brown-50);
+
+        color: var(--lf-brown-700);
+
+        transform: translateX(3px);
+    }

@@ -1,0 +1,12 @@
+.mainAdminUsers{
+    overflow: scroll;
+    min-height: 90vh;
+    font-size: 1em;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+.mainAdminUsers::-webkit-scrollbar{
+    display: none;
+}

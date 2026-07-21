@@ -1,0 +1,158 @@
+.mainSetting{
+    width: 100%;
+    max-width: 1400px;
+    margin: 2em auto;
+    padding: 0;
+
+    display: flex;
+    gap: 2em;
+    align-items: flex-start;
+}
+
+/* LEFT MENU */
+.menuContainer{
+    width: 100%;
+    max-width: 280px;
+    min-height: 80vh;
+
+    background: white;
+
+    border: 1px solid var(--lf-border);
+    border-radius: var(--lf-radius-sm);
+
+    padding: 1.2em;
+
+    box-shadow: var(--lf-shadow-soft);
+}
+
+.menuContainer h2{
+    color: var(--lf-brown-800);
+    margin-bottom: .8em;
+}
+
+.menuContainer ol{
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+    gap: .4em;
+}
+
+.menuContainer li{
+    border-radius: 12px;
+
+    transition: .2s ease;
+
+    overflow: hidden;
+}
+
+.menuContainer li:hover{
+    background: var(--lf-brown-100);
+}
+
+.menuContainer li a{
+    width: 100%;
+    display: block;
+
+    padding: .95em 1em;
+
+    text-decoration: none;
+
+    color: var(--lf-text);
+    font-weight: 500;
+
+    transition: .2s ease;
+}
+
+.menuContainer li:hover a{
+    color: var(--lf-brown-700);
+}
+
+/* ACTIVE LINK */
+.menuContainer li .active{
+    background: var(--lf-brown-700);
+    color: white;
+}
+
+/* RIGHT CONTENT */
+.menuContentContainer{
+    flex: 1;
+    min-height: 80vh;
+    max-height: 80vh;
+    overflow: scroll;
+
+    background: white;
+
+    border: 1px solid var(--lf-border);
+    border-radius: var(--lf-radius);
+
+    padding: 2em;
+
+    box-shadow: var(--lf-shadow-soft);
+
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+.menuContentContainer::-webkit-scrollbar{
+    display: none; /* Chrome, Safari */
+}
+.menuContentContainer h2{
+    color: var(--lf-brown-800);
+    margin-bottom: .8em;
+}
+
+.menuContentContainer hr{
+    border: none;
+    height: 1px;
+    background: var(--lf-border);
+
+    margin-bottom: 1.5em;
+}
+
+.menuContentContainer p{
+    color: var(--lf-muted);
+    line-height: 1.7;
+}
+
+.menuIconContainer{
+    display: flex;
+    justify-content: space-between;
+}
+.menuIconContainer > svg{
+    display: none;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+/* RESPONSIVE */
+@media (max-width: 900px){
+
+    .mainSetting{
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+    }
+
+    .menuContainer{
+        max-width: 100%;
+        height: 40vh;
+        border-radius: 0;
+        position: absolute;
+        z-index: 999;
+        top: 10vh;
+        margin: 0;
+        box-shadow: var(--lf-shadow-soft);
+        
+    }
+
+    .menuContentContainer{
+        border-radius: 0;
+        width: 100%;
+        min-height: 90vh;
+        max-height: 90vh;
+        margin: 0;
+    }
+
+    .menuIconContainer > svg{
+        display: block;
+    }
+}

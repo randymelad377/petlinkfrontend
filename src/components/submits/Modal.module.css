@@ -1,0 +1,91 @@
+.modalSection{
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    font-size: 1rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.confirmationOC, .successOC{
+    max-width: 400px;
+    font-size: 1.2em;
+    padding: 1.2em;
+    border: var(--lf-border);
+    background-color: white;
+    border-radius: var(--lf-radius);
+    box-shadow: var(--lf-shadow);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+.crossContainer{
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+.cross{
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.cross:hover{
+    transform: rotateZ(90deg);
+}
+.confirmationDesc{
+    font-size: 1.1em;
+}
+.warning{
+    font-size: .9em;
+    color: red !important;
+}
+.confirmationBtn{
+    padding: 1em 1.5em;
+    border-radius: var(--lf-radius);
+    border: 1px solid black var(--lf-border);
+    background-color: var(--lf-brown-600);
+    color: white;
+    box-shadow: var(--lf-shadow);
+    font-weight:600;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.confirmationBtn:hover{
+    transform: translateY(-2px);
+}
+.loadingOC{
+    font-size: 1.2em;
+    padding: 2em 5em;
+    border: var(--lf-border);
+    background-color: white;
+    border-radius: var(--lf-radius);
+    box-shadow: var(--lf-shadow);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+
+}
+.spiner{
+    width: 40px;
+    height: 40px;
+    border: 3px solid var(--lf-brown-200, #ddd);
+    border-top: 3px solid var(--lf-brown-800);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin{
+    to{
+        transform: rotate(360deg);
+    }
+}
+.successMsg{
+    text-align: center;
+}

@@ -1,0 +1,28 @@
+.pageLoading {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--lf-brown-50);
+}
+
+.spin {
+    width: 60px;
+    height: 60px;
+    border: 6px solid var(--lf-brown-100);
+    border-top: 6px solid var(--lf-brown-600);
+    border-right: 6px solid var(--lf-brown-700);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    box-shadow: var(--lf-shadow-soft);
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,71 @@
+.loginMain{
+    font-size: 1.3rem;
+    padding: 1em;
+    width: 70%;
+    max-width: 400px;
+    border-radius: 1em;
+    box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.226);
+}
+.loginForm{
+    
+    padding: 2em;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 1em;
+    
+}
+.inputOuterContainer{
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+}
+.inputContainer{
+    display: flex;
+    gap: .2em;
+    border-bottom: 2px solid black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: .5em;
+}
+.inputContainer > input{
+    border: none;
+    background-color: inherit;
+    font-size: .8em;
+}
+.inputContainer > input:focus{
+    outline: none;
+}
+.forgetNavLink{
+    font-size: .8em;
+}
+.linkContainer{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.submitButton{
+    width: 100%;
+    padding: 1em;
+    font-weight: bolder;
+    background-color: var( --lf-brown-800);
+    color: white;
+    border: none;
+    border-radius: 2em;
+    cursor: pointer;
+    box-shadow: 1px 1px 5px 1px var(--lf-shadow-soft);
+    transition: transform .5s ease;
+}
+.submitButton:hover{
+    transform: translateY(-5px);
+}
+.quickView{
+    font-size: .8em;
+}
+.responseMsg{
+    color: red;
+    text-align: center;
+    margin: .5em;
+}
+

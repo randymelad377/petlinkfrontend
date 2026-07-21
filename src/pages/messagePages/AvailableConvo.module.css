@@ -1,0 +1,452 @@
+.main{
+    width: 100%;
+    padding: 1em;
+    background: linear-gradient(
+        to bottom,
+        var(--lf-brown-50),
+        white
+    );
+
+    font-family: Arial, sans-serif;
+
+    display: flex;
+    gap: 3em;
+    
+}
+@media (max-width: 999px){
+    .main{
+        padding: 0;
+        margin: 0;
+    }
+}
+
+/* INPUT AREA */
+.addMessageOC{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.364);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    position: fixed;
+    z-index: 999;
+    inset: 0;
+}
+.addMessageIC{
+    height: 60vh;
+    width: 40%;
+    min-width: 450px;
+    background-color: white;
+    border-radius: 1em;
+    box-shadow: var(--lf-shadow);
+    position: relative;
+}
+.sendArea{
+    width: 100%;
+
+    padding: 1rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: .8rem;
+
+    border-top: 1px solid var(--lf-border);
+
+    border-radius: 0 0 var(--lf-radius) var(--lf-radius);
+    background: white;
+
+    position: absolute;
+    bottom: 0;
+}
+
+/* IMAGE PICKER ICON */
+.sendFile{
+    width: 46px;
+    height: 46px;
+
+    padding: .7rem;
+
+    border-radius: 50%;
+
+    background: var(--lf-brown-50);
+
+    border: 1px solid var(--lf-border);
+
+    color: var(--lf-brown-700);
+
+    cursor: pointer;
+
+    transition: .25s ease;
+
+    flex-shrink: 0;
+}
+
+.sendFile:hover{
+    background: var(--lf-brown-100);
+
+    transform: translateY(-2px);
+
+    box-shadow: var(--lf-shadow-soft);
+}
+
+/* TEXT INPUT */
+.sendInput{
+    flex: 1;
+    padding: .9rem 1rem;
+
+    border-radius: 999px;
+
+    border: 1px solid var(--lf-border);
+
+    background: var(--lf-brown-50);
+
+    outline: none;
+
+    font-size: .95rem;
+
+    color: var(--lf-text);
+
+    transition: .2s ease;
+}
+
+.sendInput:focus{
+    border-color: var(--lf-brown-500);
+
+    box-shadow: 0 0 0 3px rgba(138, 90, 60, 0.12);
+}
+
+/* SEND BUTTON */
+.sendButton{
+    width: 48px;
+    height: 48px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: linear-gradient(
+        135deg,
+        var(--lf-brown-600),
+        var(--lf-brown-700)
+    );
+
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+
+    transition: .25s ease;
+
+    box-shadow: var(--lf-shadow-soft);
+
+    flex-shrink: 0;
+}
+
+.sendButton:hover{
+    transform: translateY(-2px);
+
+    box-shadow: var(--lf-shadow);
+
+    background: linear-gradient(
+        135deg,
+        var(--lf-brown-700),
+        var(--lf-brown-800)
+    );
+}
+
+/* SEND ICON */
+.sendIcon{
+    font-size: 1.2rem;
+}
+/* ================= SEARCH HEADER ================= */
+
+.inputSearchOC{
+    width: 100%;
+    padding: 1.25rem;
+
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    border-bottom: 1px solid var(--lf-border);
+
+    background: linear-gradient(
+        to bottom,
+        var(--lf-brown-50),
+        #fff
+    );
+
+    border-radius: var(--lf-radius) var(--lf-radius) 0 0;
+}
+
+/* SEARCH BAR */
+
+.inputSearchIC{
+    flex: 1;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 .35rem 0 1rem;
+
+    border: 1px solid var(--lf-border);
+    border-radius: 999px;
+
+    background: var(--lf-brown-50);
+
+    transition: .25s ease;
+}
+
+.inputSearchIC:focus-within{
+    background: white;
+    border-color: var(--lf-brown-500);
+    box-shadow: 0 0 0 3px rgba(138,90,60,.12);
+}
+
+.inputSearchIC input{
+    flex: 1;
+    height: 100%;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: var(--lf-text);
+    font-size: .95rem;
+}
+
+.inputSearchIC input::placeholder{
+    color: var(--lf-muted);
+}
+
+/* SEARCH ICON */
+
+.inputSearchIC svg{
+    width: 38px;
+    height: 38px;
+
+    padding: .7rem;
+
+    border-radius: 50%;
+
+    color: var(--lf-brown-600);
+    cursor: pointer;
+
+    flex-shrink: 0;
+}
+
+/* CLOSE BUTTON */
+
+.inputSearchOC > svg{
+    width: 46px;
+    height: 46px;
+
+    padding: .8rem;
+
+    border-radius: 50%;
+
+    background: var(--lf-brown-50);
+    border: 1px solid var(--lf-border);
+
+    color: var(--lf-brown-700);
+
+    cursor: pointer;
+
+    transition: .25s ease;
+
+    flex-shrink: 0;
+}
+
+.inputSearchOC > svg:hover{
+    background: #f7d9d9;
+    border-color: #e8bcbc;
+    color: #b11d1d;
+
+    transform: rotate(90deg);
+
+    box-shadow: var(--lf-shadow-soft);
+}
+
+.inputSearchOC > svg:active{
+    transform: scale(.95);
+}
+/* ================= SEARCH RESULTS ================= */
+
+.searchedUsersContainer{
+    width: 100%;
+    max-height: 35vh;
+
+    margin: 0;
+    padding: .75rem 1.25rem;
+
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+    gap: .6rem;
+
+    overflow-y: auto;
+
+    background: white;
+}
+
+/* SCROLLBAR */
+.searchedUsersContainer::-webkit-scrollbar{
+    width: 8px;
+}
+
+.searchedUsersContainer::-webkit-scrollbar-track{
+    background: var(--lf-brown-50);
+    border-radius: 999px;
+}
+
+.searchedUsersContainer::-webkit-scrollbar-thumb{
+    background: var(--lf-brown-300, var(--lf-brown-500));
+    border-radius: 999px;
+}
+
+
+/* USER ITEM */
+
+.selectedUsers{
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    padding: .8rem 1rem;
+
+    border-radius: var(--lf-radius-sm);
+
+    background: var(--lf-brown-50);
+
+    border: 1px solid var(--lf-border);
+
+    cursor: pointer;
+
+    transition: .25s ease;
+}
+
+
+.selectedUser{
+    
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    padding: .8rem 1rem;
+
+    border-radius: var(--lf-radius-sm);
+
+    background: var(--lf-brown-50);
+
+    border: 1px solid var(--lf-border);
+
+    cursor: pointer;
+
+    transition: .25s ease;
+
+    background: white !important;
+
+    border-color: var(--lf-brown-500);
+
+    transform: translateY(-2px);
+
+    box-shadow: var(--lf-shadow-soft);
+}
+/* USER IMAGE */
+
+.searchedUsersContainer li img{
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    background: var(--lf-brown-100);
+
+    border: 2px solid var(--lf-brown-100);
+}
+
+
+/* USER NAME */
+
+.searchedUsersContainer li p{
+    margin: 0;
+
+    color: var(--lf-text);
+
+    font-size: .95rem;
+
+    font-weight: 600;
+}
+
+
+/* EMPTY RESULT */
+
+.searchedUsersContainer:empty::before{
+    content: "No users found.";
+
+    display: block;
+
+    text-align: center;
+
+    padding: 2rem;
+
+    color: var(--lf-muted);
+
+    font-size: .95rem;
+}
+.addBtn{
+    width: 60px;
+    aspect-ratio: 1/1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-left: auto;
+
+    position: sticky;
+    bottom: 2em;
+
+    border: none;
+    border-radius: 50%;
+
+    background: var(--lf-brown-700);
+    color: white;
+
+    cursor: pointer;
+
+    box-shadow: var(--lf-shadow);
+
+    transition: .25s ease;
+
+    z-index: 100;
+}
+
+.addBtn:hover{
+    background: var(--lf-brown-800);
+
+    transform: translateY(-4px) scale(1.05);
+}
+
+.addBtn:active{
+    transform: scale(.95);
+}
+
+.addIcon{
+    font-size: 1.5rem;
+}

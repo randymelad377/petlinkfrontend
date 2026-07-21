@@ -1,0 +1,304 @@
+.mainTransactionForm{
+    width: 100%;
+    min-height: 100vh;
+
+    padding: 2em 1em;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background: var(--lf-brown-50);
+    border-radius: var(--lf-radius);
+    font-size: 1rem;
+}
+
+.outerInfoContainer{
+    width: 100%;
+    max-width: 850px;
+
+    padding: 2em;
+
+    display: flex;
+    justify-content: space-between;
+
+    background: white;
+    border-radius: 1em 1em 0 0;
+    position: relative;
+}
+
+.outerInfoContainer svg{
+    font-size: 2rem;
+
+    color: var(--lf-brown-700);
+
+    cursor: pointer;
+
+    transition: .25s ease;
+}
+
+.outerInfoContainer svg:hover{
+    transform: scale(1.5);
+    color: var(--lf-brown-900);
+}
+
+/* =========================
+USER IMAGE
+========================= */
+.userImageContainer{
+    width: 100%;
+    max-width: 180px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+
+.userImage{
+    width: 130px;
+    height: 130px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 5px solid var(--lf-brown-100);
+
+    box-shadow: var(--lf-shadow-soft);
+}
+
+.userName{
+    text-align: center;
+
+    font-size: 1.5rem;
+    font-weight: 700;
+
+    color: var(--lf-text);
+    cursor: pointer;
+}
+
+.infoOuterContainer{
+    width: 100%;
+    max-width: 850px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.8em;
+
+    padding: 2em;
+
+    background: white;
+
+    border: 1px solid var(--lf-border);
+    border-radius: 0 0 var(--lf-radius) var(--lf-radius);
+
+    box-shadow: var(--lf-shadow);
+}
+
+/* IMAGE SECTION */
+.imageContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.petImages{
+    flex: 1;
+    height: 150px;
+
+    object-fit: cover;
+
+    border-radius: var(--lf-radius-sm);
+
+    border: 1px solid var(--lf-border);
+
+    cursor: pointer;
+    transition: .50s ease;
+}
+
+.petImages:hover{
+    transform: scale(1.5);
+}
+
+/* INFO CONTAINERS */
+.petInfoContainer,
+.transctionInfoContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+/* EACH FIELD */
+.infoInnerContainer{
+    display: flex;
+    flex-direction: column;
+    gap: .45em;
+}
+
+/* INPUT STYLE LOOK */
+.value{
+    width: 100%;
+
+    padding: .95em 1em;
+
+    background: var(--lf-brown-50);
+
+    border: 1px solid var(--lf-border);
+    border-radius: var(--lf-radius-sm);
+
+    color: var(--lf-text);
+}
+
+.settingContainer{
+    position: absolute;
+    top: 3em;
+    right: 1rem;
+
+    width: 220px;
+
+    padding: .4rem;
+
+    list-style: none;
+
+    background: white;
+
+    border: 1px solid var(--lf-border);
+    border-radius: 16px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,.08);
+
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+
+    z-index: 20;
+
+    animation: fadeDropdown .2s ease;
+}
+
+/* EACH ITEM */
+.settingContainer li{
+    padding: .9rem 1rem;
+
+    border-radius: 12px;
+
+    font-size: .95rem;
+    font-weight: 500;
+
+    color: var(--lf-text);
+
+    cursor: pointer;
+
+    transition: .2s ease;
+
+    display: flex;
+    align-items: center;
+    gap: .7rem;
+}
+
+/* HOVER */
+.settingContainer li:hover{
+    background: var(--lf-brown-50);
+
+    color: var(--lf-brown-700);
+
+    transform: translateX(3px);
+}
+
+/* =========================
+ACTION BUTTONS
+========================= */
+.actionBtnContainer{
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+
+    margin-top: 1em;
+}
+
+.actionBtnContainer button{
+    padding: .95em 1.5em;
+
+    border: none;
+    border-radius: var(--lf-radius-sm);
+
+    flex: 1;
+    font-size: .95rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: .25s ease;
+}
+
+.declineBtn{
+    background: #ffe5e5;
+    color: #c0392b;
+}
+
+.declineBtn:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(192,57,43,.15);
+}
+
+.doneBtn{
+    background: var(--lf-brown-700);
+    color: white;
+}
+
+.doneBtn:hover{
+    background: var(--lf-brown-900);
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 18px rgba(0,0,0,.12);
+}
+.outerInputContainer{
+    width: 100%;
+    max-width: 850px;
+
+    background: white;
+    border-radius: 0 0 var(--lf-radius) var(--lf-radius);
+    overflow: hidden;
+    border: 1px solid var(--lf-border);
+    padding: 1em;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.innerInputContainer{
+    padding: 1.5em 1.7em;
+
+    display: flex;
+    flex-direction: column;
+    gap: .8em;
+
+    transition: .2s ease;
+}
+
+/* small divider only */
+.innerInputContainer:not(:last-child){
+    border-bottom: 1px solid rgba(90,55,34,.08);
+}
+
+.innerInputContainer:hover{
+    background: var(--lf-brown-50);
+}
+
+.question{
+    font-size: 1rem;
+    font-weight: 700;
+
+    color: var(--lf-brown-700);
+}
+
+.answer{
+    color: var(--lf-muted);
+}

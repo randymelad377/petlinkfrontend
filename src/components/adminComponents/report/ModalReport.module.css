@@ -1,0 +1,219 @@
+.modalReportOuterContainer {
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 1rem;
+    backdrop-filter: blur(6px);
+}
+
+.modalReportInnerContainer {
+    width: min(95%, 750px);
+    max-height: 85vh;
+
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+
+    border: 1px solid var(--lf-border);
+    border-radius: var(--lf-radius);
+
+    box-shadow: var(--lf-shadow);
+
+    padding: var(--lf-padding);
+
+    animation: modalShow 0.25s ease;
+    overflow: hidden;
+}
+
+/* HEADER */
+.userContainer {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    padding-bottom: 1rem;
+    margin-bottom: 1.25rem;
+
+    border-bottom: 1px solid var(--lf-border);
+}
+
+.userContainer img {
+    width: 64px;
+    height: 64px;
+
+    display: block;
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: 50%;
+    border: 3px solid var(--lf-brown-100);
+}
+
+.userContainer h2 {
+    flex: 1;
+
+    margin: 0;
+
+    font-size: 1.1rem;
+    font-weight: 600;
+
+    color: var(--lf-text);
+    cursor: pointer;
+}
+
+.closeIcon {
+    font-size: 1.8rem;
+
+    color: var(--lf-muted);
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+    padding: 0.25rem;
+    border-radius: 50%;
+}
+
+.closeIcon:hover {
+    color: var(--lf-brown-900);
+    background: var(--lf-brown-100);
+    transform: rotate(90deg);
+}
+
+/* REPORT BODY */
+.report {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    overflow-y: auto;
+    padding-right: 0.3rem;
+}
+
+/* scroll */
+.report::-webkit-scrollbar {
+    width: 6px;
+}
+
+.report::-webkit-scrollbar-thumb {
+    background: var(--lf-brown-500);
+    border-radius: 20px;
+}
+
+.report::-webkit-scrollbar-track {
+    background: var(--lf-brown-100);
+}
+
+/* IMAGE */
+.feedbackImg {
+    display: block;
+    width: 100%;
+    height: 300px;          /* Fixed height for consistent cropping */
+    max-height: 300px;
+
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: var(--lf-radius-sm);
+    border: 1px solid var(--lf-border);
+    box-shadow: var(--lf-shadow-soft);
+}
+
+
+/* TEXT BLOCK */
+.feedbackDesc {
+    margin: 0;
+
+    padding: 1rem;
+
+    background: white;
+
+    border: 1px solid var(--lf-border);
+    border-left: 5px solid var(--lf-brown-600);
+
+    border-radius: var(--lf-radius-sm);
+
+    color: var(--lf-text);
+
+    font-size: 0.95rem;
+    line-height: 1.8;
+
+    box-shadow: var(--lf-shadow-soft);
+}
+
+.feedbackDesc span {
+    font-weight: 700;
+    color: var(--lf-brown-800);
+}
+
+/* ACTION AREA */
+.actionContainer {
+    margin-top: 1.25rem;
+    padding-top: 1rem;
+
+    border-top: 1px solid var(--lf-border);
+
+    display: flex;
+    justify-content: flex-end;
+    gap:1em;
+}
+
+.markBtn {
+    border: none;
+    outline: none;
+
+    padding: 0.85rem 1.5rem;
+
+    border-radius: var(--lf-radius-sm);
+
+    background: var(--lf-brown-700);
+    color: white;
+
+    font-weight: 600;
+    font-size: 0.95rem;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.markBtn:hover {
+    background: var(--lf-brown-900);
+    transform: translateY(-2px);
+}
+
+.markBtn:active {
+    transform: translateY(0);
+}
+
+.actionContainer button:first-child {
+  background-color: red !important;
+  color: white !important;
+}
+
+/* ANIMATION */
+@keyframes modalShow {
+    from {
+        opacity: 0;
+        transform: translateY(-15px) scale(0.96);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .modalReportInnerContainer {
+        max-height: 90vh;
+        padding: 1.25rem;
+    }
+
+    .feedbackDesc {
+        font-size: 0.9rem;
+    }
+}
