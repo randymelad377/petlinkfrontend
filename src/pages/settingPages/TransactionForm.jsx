@@ -6,6 +6,8 @@ import { useState } from "react";
 import { NavLink, useLoaderData, useNavigate, useParams } from "react-router-dom";
 import { useGet, usePut } from "../../helpers/PetHelper";
 import Modal from "../../components/others/Modal";
+import PageLoading from "../../components/feedbackComponents/PageLoading";
+import PageError from "../../components/feedbackComponents/PageError";
 
 function TransactionForm() {
     
@@ -95,6 +97,13 @@ function TransactionForm() {
         execute(`transaction/${id}`, { "action" : action});
     }
     
+    if (transactionIsLoading) {
+        return <PageLoading></PageLoading>
+    }
+
+    if (!transactionIsLoading && transactionError) {
+        return <PageError></PageError>
+    }
     return (
         <main className={Style.mainTransactionForm}>
             <section className={Style.outerInfoContainer}>

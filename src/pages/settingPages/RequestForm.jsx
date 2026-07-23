@@ -7,6 +7,7 @@ import { useGet, useGetMsg, usePut } from "../../helpers/PetHelper";
 import { act, useState } from "react";
 import Modal from "../../components/others/Modal";
 import PageError from "../../components/feedbackComponents/PageError";
+import PageLoading from "../../components/feedbackComponents/PageLoading";
 function RequestForm() {
     
     const id = useParams().id;
@@ -31,6 +32,13 @@ function RequestForm() {
         execute(`forms/${id}`, {"action" : action});
     }
 
+    if (transactionIsLoading) {
+        return <PageLoading></PageLoading>
+    }
+
+    if (!transactionIsLoading && transactionError) {
+        return <PageError></PageError>
+    }
     return (
         <main className={Style.mainRequestForm}>
             <section className={Style.outerInfoContainer}>
