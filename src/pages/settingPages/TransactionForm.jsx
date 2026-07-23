@@ -4,15 +4,15 @@ import { MdArrowBack } from "react-icons/md";
 import Hero from "../../assets/signatureImg.png";
 import { useState } from "react";
 import { NavLink, useLoaderData, useNavigate, useParams } from "react-router-dom";
-import { usePut } from "../../helpers/PetHelper";
+import { useGet, usePut } from "../../helpers/PetHelper";
 import Modal from "../../components/others/Modal";
 
 function TransactionForm() {
     
     const navigate = useNavigate();
     
-    const data = useLoaderData();
     const id = useParams().id;
+    const { data, error, isLoading } = useGet(`transaction/${id}`);
     const responded = data?.data?.user?.responded === null;
     
     //pet images

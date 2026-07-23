@@ -88,17 +88,7 @@ const MyRouter = createBrowserRouter(
                         <Route index element={<Notification></Notification>}></Route>
                     </Route>
                     <Route path="/messages" element={<MessageLayout></MessageLayout>}>
-                        <Route
-                            index
-                            element={<AvailableConvo />}
-                            loader={({ request }) => {
-                                const url = new URL(request.url);
-                                const name = url.searchParams.get("name");
-
-                                return name
-                                ? getService(`conversation?name=${encodeURIComponent(name)}`)
-                                : getService("conversation");
-                            }}/>
+                        <Route index element={<AvailableConvo/>} />
                     </Route>
                     <Route element={<SettingLayout></SettingLayout>}>
                         <Route path="setting" element={<Setting></Setting>}>
@@ -113,8 +103,8 @@ const MyRouter = createBrowserRouter(
                         </Route>
                     </Route>
 
-                    <Route path="request_forms/:id" element={<RequestForm/>} loader={({ params }) => getService(`forms/${params.id}`)}  errorElement={<PageError />}></Route>
-                    <Route path="transaction/:id" element={<TransactionForm />} loader={({ params}) => getService(`transaction/${params.id}`)} errorElement={<PageError/>}></Route>
+                    <Route path="request_forms/:id" element={<RequestForm/>}  errorElement={<PageError />}></Route>
+                    <Route path="transaction/:id" element={<TransactionForm />} errorElement={<PageError/>}></Route>
                     <Route path="history/:id" element={<HistoryForm/>}></Route>
                 </Route>
             </Route>

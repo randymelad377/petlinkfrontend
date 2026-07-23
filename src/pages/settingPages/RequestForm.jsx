@@ -3,14 +3,15 @@ import { FiMessageCircle } from "react-icons/fi";
 import { MdArrowBack } from "react-icons/md";
 import Hero from "../../assets/signatureImg.png";
 import { NavLink, useLoaderData, useNavigate, useParams } from "react-router-dom";
-import { useGet, usePut } from "../../helpers/PetHelper";
+import { useGet, useGetMsg, usePut } from "../../helpers/PetHelper";
 import { act, useState } from "react";
 import Modal from "../../components/others/Modal";
 import PageError from "../../components/feedbackComponents/PageError";
 function RequestForm() {
     
     const id = useParams().id;
-    const data = useLoaderData();
+    const { data, error, isLoading } = useGetMsg(`forms/${id}`);
+    
     const form = data?.data;
 
     const navigate = useNavigate();

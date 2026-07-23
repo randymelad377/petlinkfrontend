@@ -1,5 +1,7 @@
 import Style from "./Notification.module.css";
 import Hero from "../../assets/signatureImg.png";
+import PageLoading from "../../components/feedbackComponents/PageLoading";
+import PageError from "../../components/feedbackComponents/PageError";
 import { MdDeleteOutline } from "react-icons/md";
 import { useDelete, useGet, usePut } from "../../helpers/PetHelper";
 import { BsThreeDots } from "react-icons/bs";
@@ -83,6 +85,14 @@ function Notifications() {
             </div>
         </article>
     )) : <p>No notifications.</p>
+
+    if (isLoading) {
+        return <PageLoading></PageLoading>
+    }
+
+    if(!loading && error){
+        return <PageError></PageError>
+    }
 
     return (
         <main className={Style.mainNotfication}>
