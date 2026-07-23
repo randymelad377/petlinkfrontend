@@ -5,7 +5,14 @@ import { MdGpsFixed } from "react-icons/md";
 import Style from "./Map.module.css";
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-
+import L from "leaflet";
+import "leaflet/dist/leaflet.css";
+import markerIcon from "leaflet/dist/images/marker-icon.png";
+import markerShadow from "leaflet/dist/images/marker-shadow.png";
+L.Icon.Default.mergeOptions({
+  iconUrl: markerIcon,
+  shadowUrl: markerShadow,
+});
 
 function ChangeLocation({ center }) {
   const map = useMap();
