@@ -41,18 +41,18 @@ function AVailableConvo() {
     //FOR UI
 
     // Get conversation
-    const url = new URL(request.url);
-    const name = url.searchParams.get("name");
+    const name = searchParams.get("name");
 
     const endpoint = name
-    ? `conversation?name=${encodeURIComponent(name)}`
-    : "conversation";
+        ? `conversation?name=${encodeURIComponent(name)}`
+        : "conversation";
 
     const {
-    data: conversations,
-    error: conversationError,
-    isLoading: conversationIsLoading,
+        data: conversations,
+        error: conversationError,
+        isLoading: conversationIsLoading,
     } = useGet(endpoint);
+
 
     const [conversationId, setConversationId] = useState(null);
     //GET CONVERSATION
