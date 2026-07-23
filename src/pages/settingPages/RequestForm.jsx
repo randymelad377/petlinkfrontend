@@ -32,11 +32,11 @@ function RequestForm() {
         execute(`forms/${id}`, {"action" : action});
     }
 
-    if (transactionIsLoading) {
+    if (isLoading) {
         return <PageLoading></PageLoading>
     }
 
-    if (!transactionIsLoading && transactionError) {
+    if (!isLoading && error) {
         return <PageError></PageError>
     }
     return (
