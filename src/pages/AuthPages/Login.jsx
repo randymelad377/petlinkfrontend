@@ -27,6 +27,7 @@ function Login() {
     useEffect(() => {
         if (postIsSuccess) {
             localStorage.setItem("token", postData.token);
+            console.log(postData)
             navigate("/")
         }
     }, [postIsSuccess])
