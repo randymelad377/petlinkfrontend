@@ -12,7 +12,7 @@ function TransactionForm() {
     const navigate = useNavigate();
     
     const id = useParams().id;
-    const { data, error, isLoading } = useGet(`transaction/${id}`);
+    const { data, error:transactionError, isLoading:transactionIsLoading } = useGet(`transaction/${id}`);
     const responded = data?.data?.user?.responded === null;
     
     //pet images
