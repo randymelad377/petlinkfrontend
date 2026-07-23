@@ -27,8 +27,8 @@ function Login() {
     useEffect(() => {
         if (postIsSuccess) {
             localStorage.setItem("token", postData.token);
-            console.log(postData)
-            navigate("/")
+            const goTo = postData?.data?.user_role !== "user" ? "/admin" : "/";
+            navigate(goTo)
         }
     }, [postIsSuccess])
     
